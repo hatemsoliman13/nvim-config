@@ -15,6 +15,6 @@ return {
 				require("none-ls.diagnostics.eslint_d"),
 			},
 		})
-		vim.keymap.set("n", "<leader>fs", vim.lsp.buf.format, {})
+		vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format, {})
 	end,
 }
