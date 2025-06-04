@@ -9,7 +9,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "intelephense", "phpactor" },
+				ensure_installed = { "lua_ls", "phpactor", "ts_ls", "cssls", "tailwindcss", "html" },
 			})
 		end,
 	},
@@ -18,7 +18,8 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			lspconfig.lua_ls.setup({ capabilities = capabilities })
+			lspconfig.lua_ls.setup({
+				capabilities = capabilities,})
 			lspconfig.phpactor.setup({ capabilities = capabilities })
 			vim.keymap.set("n", "<leader>lh", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>ld", vim.lsp.buf.definition, {})
@@ -30,8 +31,14 @@ return {
 	{
 		"folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			vim.keymap.set("n", "<leader>tt", ":TroubleToggle<CR>", {})
-		end,
+		opts = {}, -- for default options, refer to the configuration section for custom setup.
+		cmd = "Trouble",
+		keys = {
+			{
+				"<leader>xx",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+		},
 	},
 }
