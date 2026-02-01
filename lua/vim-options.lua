@@ -1,8 +1,3 @@
-vim.cmd("set noexpandtab")
-vim.cmd("set tabstop=4")
-vim.cmd("set softtabstop=0")
-vim.cmd("set shiftwidth=4")
-vim.wo.relativenumber=true
 vim.g.mapleader = " "
 vim.keymap.set({ "i", "v", "c" }, "<leader>jj", "<esc>")
 vim.keymap.set("n", "<leader>k", "<C-o>")
@@ -16,3 +11,4 @@ vim.keymap.set("n", "<leader>wk", "<C-w>k")
 vim.keymap.set("n", "<leader>wl", "<C-w>l")
 vim.keymap.set("n", "<leader>wv", "<C-w>v")
 vim.keymap.set("n", "<leader>ws", "<C-w>s")
+vim.g.python3_host_prog = "/usr/bin/python3"
