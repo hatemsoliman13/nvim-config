@@ -11,6 +11,8 @@ return {
             php = { "php_cs_fixer" },
             sh = { "shfmt" },
             bash = { "shfmt" },
+            c = { "clang-format" },
+            cpp = { "clang-format" },
         },
         format_on_save = {
             timeout_ms = 500,
